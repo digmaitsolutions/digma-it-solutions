@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="hGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="hGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="hGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient background glow rings -->
+  <circle cx="400" cy="300" r="260" stroke="url(#hGrad1)" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.3" />
+  <circle cx="400" cy="300" r="190" stroke="url(#hGrad2)" stroke-width="1.5" stroke-dasharray="12 12" opacity="0.4" />
+  <circle cx="400" cy="300" r="120" fill="url(#hGrad1)" opacity="0.12" filter="url(#hGlow)" />
+
+  <!-- Isometric Central Cloud Core -->
+  <g transform="translate(400, 260)">
+    <!-- Main Floating Hex/Cube Node -->
+    <path d="M0 -70 L60 -35 L60 35 L0 70 L-60 35 L-60 -35 Z" fill="#0f172a" stroke="url(#hGrad1)" stroke-width="2.5" />
+    <path d="M0 -70 L0 70 M-60 -35 L0 0 L60 -35 M-60 35 L0 0 L60 35" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+
+    <!-- Core Glowing Orb -->
+    <circle cx="0" cy="0" r="18" fill="url(#hGrad2)" filter="url(#hGlow)" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+  </g>
+
+  <!-- Floating Satellite Cards -->
+  <!-- Card 1: Cloud Architecture / Microservices -->
+  <g transform="translate(140, 140)">
+    <rect width="180" height="95" rx="14" fill="#0b1120" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
+    <circle cx="28" cy="28" r="10" fill="#0284c7" />
+    <text x="46" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Cloud DevOps</text>
+    <rect x="20" y="48" width="140" height="6" rx="3" fill="#1e293b" />
+    <rect x="20" y="48" width="112" height="6" rx="3" fill="#06b6d4" />
+    <text x="20" y="74" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#94a3b8">99.99% Uptime SLA</text>
+    <circle cx="150" cy="71" r="3" fill="#10b981" />
+  </g>
+
+  <!-- Card 2: AI & Real-time Analytics -->
+  <g transform="translate(480, 120)">
+    <rect width="190" height="105" rx="14" fill="#0b1120" stroke="rgba(139, 92, 246, 0.35)" stroke-width="1.5" />
+    <circle cx="28" cy="30" r="10" fill="#7c3aed" />
+    <text x="46" y="34" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">AI Intelligent Ops</text>
+    <path d="M22 68 Q 50 48, 80 62 T 135 44 T 168 52" fill="none" stroke="#a855f7" stroke-width="2.5" />
+    <text x="22" y="88" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#a855f7">Latency: 24ms</text>
+  </g>
+
+  <!-- Card 3: Enterprise Web Architecture -->
+  <g transform="translate(130, 380)">
+    <rect width="190" height="100" rx="14" fill="#0b1120" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5" />
+    <circle cx="28" cy="28" r="10" fill="#059669" />
+    <text x="46" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Next.js Enterprise</text>
+    <text x="22" y="56" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#38bdf8">Speed Score: 100/100</text>
+    <path d="M22 74 H 168" stroke="#1e293b" stroke-width="2" />
+    <circle cx="40" cy="74" r="4" fill="#10b981" />
+    <circle cx="85" cy="74" r="4" fill="#3b82f6" />
+    <circle cx="130" cy="74" r="4" fill="#06b6d4" />
+  </g>
+
+  <!-- Card 4: Scalable Mobile Engineering -->
+  <g transform="translate(490, 370)">
+    <rect width="180" height="95" rx="14" fill="#0b1120" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
+    <circle cx="28" cy="28" r="10" fill="#2563eb" />
+    <text x="46" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#ffffff">Cross-Platform</text>
+    <text x="22" y="55" font-family="'Space Grotesk', sans-serif" font-size="10" fill="#94a3b8">iOS • Android • React Native</text>
+    <text x="22" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="11" fill="#38bdf8">4.9 ★ Rating Average</text>
+  </g>
+
+  <!-- Connecting Laser Data Lines -->
+  <path d="M230 235 L340 260" stroke="url(#hGrad1)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <path d="M480 225 L450 260" stroke="url(#hGrad1)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <path d="M240 380 L350 330" stroke="url(#hGrad2)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <path d="M490 380 L450 330" stroke="url(#hGrad2)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+</svg>

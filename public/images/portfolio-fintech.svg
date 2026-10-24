@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="pfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="16" fill="#090f1d"/>
+  <!-- Decorative Grid & Glow -->
+  <circle cx="500" cy="80" r="140" fill="#2563eb" opacity="0.15" filter="blur(40px)"/>
+  
+  <rect x="40" y="40" width="520" height="320" rx="14" fill="#0d1527" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+  <!-- Card Header -->
+  <rect x="70" y="70" width="180" height="12" rx="6" fill="#38bdf8"/>
+  <rect x="70" y="92" width="100" height="8" rx="4" fill="#64748b"/>
+
+  <rect x="70" y="130" width="220" height="180" rx="12" fill="url(#pfGrad)"/>
+  <text x="95" y="170" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="22" fill="#ffffff">$1,840,290.40</text>
+  <text x="95" y="195" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="rgba(255,255,255,0.85)">Real-Time Treasury Vault</text>
+  <text x="95" y="275" font-family="'Courier New', monospace" font-size="12" fill="#ffffff">•••• 8921 | VISA PLATINUM</text>
+
+  <!-- Side Metrics -->
+  <rect x="310" y="130" width="220" height="85" rx="12" fill="#131e36" stroke="rgba(255,255,255,0.06)"/>
+  <text x="330" y="160" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#94a3b8">Transaction Volume</text>
+  <text x="330" y="190" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#38bdf8">+480% YoY</text>
+
+  <rect x="310" y="225" width="220" height="85" rx="12" fill="#131e36" stroke="rgba(255,255,255,0.06)"/>
+  <text x="330" y="255" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#94a3b8">Execution Latency</text>
+  <text x="330" y="285" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="20" fill="#10b981">18ms Global</text>
+</svg>
