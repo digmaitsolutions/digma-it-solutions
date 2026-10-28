@@ -20,7 +20,7 @@ export default function DigitalMarketingPage() {
     },
     {
       title: 'Conversion Rate Optimization (CRO)',
-      desc: 'Scientific A/B split testing on checkout flows, pricing tiers, and landing pages to extract maximum revenue from existing visitor volume.'
+      desc: 'Scientific A/B split testing on user checkout flows, conversion funnels, and landing pages to extract maximum revenue from existing visitor volume.'
     },
     {
       title: 'Lifecycle & Retention Automation',

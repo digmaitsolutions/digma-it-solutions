@@ -50,7 +50,7 @@ export default function ServicesPage() {
             </div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--text-primary)' }}>Fixed-Scope Turnkey MVPs</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              Defined budget, rigorous deliverables, and guaranteed launch dates designed for rapid market testing and seed fundraising.
+              Defined scope, rigorous deliverables, and guaranteed launch dates designed for rapid market testing and enterprise validation.
             </p>
           </div>
 

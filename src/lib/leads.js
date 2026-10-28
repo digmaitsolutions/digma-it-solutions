@@ -26,6 +26,7 @@ async function forwardToGoogleWebhook(lead) {
       phone: lead.phone || '',
       company: lead.company || '',
       service: lead.service || '',
+      timeline: lead.timeline || '',
       budget: lead.budget || '',
       message: lead.message || '',
       createdAt: lead.createdAt || new Date().toISOString(),

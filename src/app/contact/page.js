@@ -71,8 +71,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Direct Phone Consultation</div>
-                    <a href="tel:+18005553446" style={{ fontSize: '1rem', color: 'var(--text-primary)', fontWeight: 600 }}>
-                      +1 (800) 555-DIGMA
+                    <a href="tel:+919972082231" style={{ fontSize: '1rem', color: 'var(--text-primary)', fontWeight: 600 }}>
+                      +91 9972082231
                     </a>
                   </div>
                 </div>
@@ -82,10 +82,11 @@ export default function ContactPage() {
                     <MapPin size={20} color="#4f46e5" />
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Headquarters</div>
-                    <div style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)' }}>
-                      100 Tech Innovation Plaza, Suite 400<br />
-                      San Francisco, CA 94105
+                    <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>Office Location</div>
+                    <div style={{ fontSize: '0.9375rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                      1340, 2nd Floor, 41st Cross Road, 4th Gate,<br />
+                      Opposite to Jain University, Jayanagara 9th Block,<br />
+                      Jayanagar, Bengaluru, Karnataka 560041
                     </div>
                   </div>
                 </div>

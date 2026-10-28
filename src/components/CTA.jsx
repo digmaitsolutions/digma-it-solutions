@@ -86,7 +86,7 @@ export default function CTA() {
             </Link>
 
             <a
-              href="tel:+18005553446"
+              href="tel:+919972082231"
               className="btn btn-secondary"
               style={{
                 padding: '14px 28px',
@@ -97,7 +97,7 @@ export default function CTA() {
               }}
             >
               <PhoneCall size={17} color="#38bdf8" />
-              <span>+1 (800) 555-DIGMA</span>
+              <span>+91 9972082231</span>
             </a>
           </div>
 

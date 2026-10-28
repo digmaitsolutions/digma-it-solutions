@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 import { validateLeadForm } from '@/lib/validation';
 
@@ -11,7 +11,8 @@ export default function LeadForm({ defaultService = '' }) {
     phone: '',
     company: '',
     service: defaultService || '',
-    budget: '',
+    timeline: '',
+    budget: 'not-specified',
     message: '',
   });
 
@@ -20,6 +21,12 @@ export default function LeadForm({ defaultService = '' }) {
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [submittedLeadId, setSubmittedLeadId] = useState('');
+
+  useEffect(() => {
+    if (defaultService) {
+      setFormData((prev) => ({ ...prev, service: defaultService }));
+    }
+  }, [defaultService]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,7 +68,8 @@ export default function LeadForm({ defaultService = '' }) {
           phone: '',
           company: '',
           service: defaultService || '',
-          budget: '',
+          timeline: '',
+          budget: 'not-specified',
           message: '',
         });
       } else {
@@ -250,23 +258,23 @@ export default function LeadForm({ defaultService = '' }) {
               {errors.service && <span className="form-error">{errors.service}</span>}
             </div>
 
-            {/* Budget */}
+            {/* Target Timeline */}
             <div className="form-group">
-              <label htmlFor="lead-budget" className="form-label">
-                Estimated Budget Range
+              <label htmlFor="lead-timeline" className="form-label">
+                Target Timeline (Optional)
               </label>
               <select
-                id="lead-budget"
-                name="budget"
-                value={formData.budget}
+                id="lead-timeline"
+                name="timeline"
+                value={formData.timeline}
                 onChange={handleChange}
                 className="form-select"
               >
-                <option value="">Select estimated budget...</option>
-                <option value="under-10k">&lt; $10,000</option>
-                <option value="10k-25k">$10,000 - $25,000</option>
-                <option value="25k-50k">$25,000 - $50,000</option>
-                <option value="50k-plus">$50,000+</option>
+                <option value="">Select target timeline...</option>
+                <option value="immediate">Immediate (&lt; 2 weeks)</option>
+                <option value="1-month">Within 1 Month</option>
+                <option value="1-3-months">1 – 3 Months</option>
+                <option value="flexible">Flexible / Planning Phase</option>
               </select>
             </div>
           </div>

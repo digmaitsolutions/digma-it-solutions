@@ -175,14 +175,16 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Phone size={16} color="var(--accent-primary)" />
-                <a href="tel:+18005553446" style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
-                  +1 (800) 555-DIGMA
+                <a href="tel:+919972082231" style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
+                  +91 9972082231
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <MapPin size={16} color="var(--accent-primary)" style={{ marginTop: '3px', flexShrink: 0 }} />
-                <span>
-                  100 Tech Innovation Plaza, Suite 400<br />San Francisco, CA 94105
+                <span style={{ lineHeight: 1.5 }}>
+                  1340, 2nd Floor, 41st Cross Road, 4th Gate,<br />
+                  Opposite to Jain University, Jayanagara 9th Block,<br />
+                  Jayanagar, Bengaluru, Karnataka 560041
                 </span>
               </div>
             </div>

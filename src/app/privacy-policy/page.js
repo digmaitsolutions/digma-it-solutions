@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul style={{ paddingLeft: '24px', marginBottom: '12px' }}>
               <li><strong>Contact Identifiers:</strong> Name, work email address, telephone number, and company affiliation.</li>
-              <li><strong>Project Specifications:</strong> Scope descriptions, desired technologies, estimated budget parameters, and business goals.</li>
+              <li><strong>Project Specifications:</strong> Scope descriptions, desired technologies, target timelines, and business goals.</li>
               <li><strong>Technical Metadata:</strong> Anonymized browser type, IP address, and access timestamps to ensure cybersecurity integrity.</li>
             </ul>
           </section>
@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
               Email: <a href="mailto:digmaitsolutions@gmail.com" style={{ color: 'var(--accent-primary)' }}>digmaitsolutions@gmail.com</a><br />
-              Postal: DigMa IT Solutions Inc., Attn: Privacy Office, 100 Tech Innovation Plaza, Suite 400, San Francisco, CA 94105
+              Postal: DigMa IT Solutions, 1340, 2nd Floor, 41st Cross Road, 4th Gate, Opposite to Jain University, Jayanagara 9th Block, Jayanagar, Bengaluru, Karnataka 560041
             </p>
           </section>
         </div>

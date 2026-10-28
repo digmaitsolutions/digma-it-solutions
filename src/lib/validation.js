@@ -8,12 +8,11 @@ export const SERVICE_OPTIONS = [
   'digital-marketing'
 ];
 
-export const BUDGET_RANGES = [
-  'under-5k',
-  '5k-15k',
-  '15k-30k',
-  '30k-50k',
-  '50k-plus'
+export const TIMELINE_OPTIONS = [
+  'immediate',
+  '1-month',
+  '1-3-months',
+  'flexible'
 ];
 
 /**
@@ -100,6 +99,7 @@ export function validateLeadForm(data) {
       phone,
       company: sanitizeInput(data.company || ''),
       service,
+      timeline: sanitizeInput(data.timeline || ''),
       budget: budget || 'not-specified',
       message
     }

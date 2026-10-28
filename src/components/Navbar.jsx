@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, Sparkles, ArrowRight } from 'lucide-react';
@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -23,6 +24,19 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
   }, [pathname]);
+
+  const handleMouseEnterServices = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setServicesDropdownOpen(true);
+  };
+
+  const handleMouseLeaveServices = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 200);
+  };
 
   const navLinks = [
     { label: 'Home', href: '/' },
@@ -85,11 +99,12 @@ export default function Navbar() {
                 <div
                   key={item.label}
                   style={{ position: 'relative' }}
-                  onMouseEnter={() => setServicesDropdownOpen(true)}
-                  onMouseLeave={() => setServicesDropdownOpen(false)}
+                  onMouseEnter={handleMouseEnterServices}
+                  onMouseLeave={handleMouseLeaveServices}
                 >
                   <Link
                     href={item.href}
+                    onClick={() => setServicesDropdownOpen(false)}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -104,39 +119,49 @@ export default function Navbar() {
                     <ChevronDown size={15} style={{ transform: servicesDropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
                   </Link>
 
-                  {/* Dropdown Menu */}
+                  {/* Dropdown Menu with zero-gap hover bridge */}
                   {servicesDropdownOpen && (
                     <div
                       style={{
                         position: 'absolute',
                         top: '100%',
                         left: '-20px',
-                        width: '290px',
-                        padding: '10px',
-                        marginTop: '10px',
-                        background: '#ffffff',
-                        borderRadius: '16px',
-                        border: '1px solid #e2e8f0',
-                        boxShadow: '0 20px 40px -10px rgba(15, 23, 42, 0.12)',
+                        width: '300px',
+                        paddingTop: '8px',
+                        zIndex: 110,
                       }}
+                      onMouseEnter={handleMouseEnterServices}
+                      onMouseLeave={handleMouseLeaveServices}
                     >
-                      {item.subItems.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          style={{
-                            display: 'block',
-                            padding: '10px 14px',
-                            borderRadius: '10px',
-                            transition: 'background 0.15s',
-                            color: pathname === sub.href ? 'var(--accent-primary)' : 'var(--text-primary)',
-                          }}
-                          className="nav-dropdown-item"
-                        >
-                          <div style={{ fontSize: '0.875rem', fontWeight: 600 }}>{sub.label}</div>
-                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>{sub.desc}</div>
-                        </Link>
-                      ))}
+                      <div
+                        style={{
+                          background: '#ffffff',
+                          borderRadius: '16px',
+                          border: '1px solid #e2e8f0',
+                          padding: '10px',
+                          boxShadow: '0 20px 40px -10px rgba(15, 23, 42, 0.12)',
+                        }}
+                      >
+                        {item.subItems.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => setServicesDropdownOpen(false)}
+                            style={{
+                              display: 'block',
+                              padding: '10px 14px',
+                              borderRadius: '10px',
+                              transition: 'all 0.15s ease',
+                              color: pathname === sub.href ? 'var(--accent-primary)' : 'var(--text-primary)',
+                              background: pathname === sub.href ? '#f0f9ff' : 'transparent',
+                            }}
+                            className="nav-dropdown-item"
+                          >
+                            <div style={{ fontSize: '0.875rem', fontWeight: 600 }}>{sub.label}</div>
+                            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '2px' }}>{sub.desc}</div>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -215,6 +240,7 @@ export default function Navbar() {
             <div key={item.label}>
               <Link
                 href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -230,11 +256,17 @@ export default function Navbar() {
               </Link>
               {item.hasDropdown && (
                 <div style={{ paddingLeft: '14px', borderLeft: '2px solid #e2e8f0', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {item.subItems.slice(1).map(sub => (
+                  {item.subItems.map((sub) => (
                     <Link
                       key={sub.href}
                       href={sub.href}
-                      style={{ fontSize: '0.875rem', color: 'var(--text-muted)', padding: '4px 0' }}
+                      onClick={() => setMobileMenuOpen(false)}
+                      style={{
+                        fontSize: '0.875rem',
+                        color: pathname === sub.href ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                        padding: '6px 0',
+                        fontWeight: pathname === sub.href ? 600 : 400,
+                      }}
                     >
                       {sub.label}
                     </Link>
@@ -246,6 +278,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
             className="btn btn-primary"
             style={{ width: '100%', marginTop: '10px', justifyContent: 'center' }}
           >

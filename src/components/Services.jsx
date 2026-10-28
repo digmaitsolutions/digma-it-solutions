@@ -70,31 +70,47 @@ export default function Services() {
                   justifyContent: 'space-between',
                   borderRadius: '18px',
                   background: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  transition: 'all 0.25s ease',
                 }}
               >
                 <div>
-                  {/* Clean Icon Badge */}
-                  <div
+                  {/* Clean Icon Badge (Clickable) */}
+                  <Link
+                    href={svc.href}
                     style={{
-                      width: '52px',
-                      height: '52px',
-                      borderRadius: '12px',
+                      width: '54px',
+                      height: '54px',
+                      borderRadius: '14px',
                       background: svc.bgColor,
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginBottom: '20px',
                     }}
+                    aria-label={`View ${svc.title}`}
                   >
-                    <Icon size={24} color={svc.color} />
-                  </div>
+                    <Icon size={26} color={svc.color} />
+                  </Link>
 
-                  <span style={{ fontSize: '0.75rem', color: svc.color, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  <div style={{ fontSize: '0.75rem', color: svc.color, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                     {svc.category}
-                  </span>
+                  </div>
                   
-                  <h3 style={{ fontSize: '1.25rem', marginTop: '6px', marginBottom: '12px', color: 'var(--text-primary)' }}>
-                    {svc.title}
+                  <h3 style={{ fontSize: '1.3rem', marginTop: '6px', marginBottom: '12px' }}>
+                    <Link
+                      href={svc.href}
+                      style={{
+                        color: 'var(--text-primary)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <span>{svc.title}</span>
+                      <ArrowUpRight size={16} color="var(--accent-primary)" />
+                    </Link>
                   </h3>
 
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: '20px' }}>
@@ -104,13 +120,13 @@ export default function Services() {
 
                 <div>
                   {/* Tech Stack Pills */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '22px' }}>
                     {svc.tags.map(t => (
                       <span
                         key={t}
                         style={{
                           fontSize: '0.75rem',
-                          padding: '4px 9px',
+                          padding: '4px 10px',
                           borderRadius: '6px',
                           background: '#f1f5f9',
                           color: '#334155',
@@ -128,14 +144,17 @@ export default function Services() {
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '5px',
+                      gap: '6px',
                       fontSize: '0.875rem',
                       fontWeight: 600,
                       color: 'var(--accent-primary)',
-                      transition: 'gap 0.2s',
+                      padding: '8px 14px',
+                      borderRadius: '8px',
+                      background: '#f0f9ff',
+                      transition: 'all 0.2s ease',
                     }}
                   >
-                    <span>Learn More</span>
+                    <span>Explore {svc.title}</span>
                     <ArrowUpRight size={15} />
                   </Link>
                 </div>
